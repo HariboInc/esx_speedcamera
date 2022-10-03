@@ -2,6 +2,8 @@ Config = {}
 
 Config.Locale = 'en'
 
+Config.CheckForUpdates = true -- Set it to true if you want to get the latest version update info
+
 Config.useBilling = true -- OPTIONS: (true/false)
 Config.useCameraSound = true -- OPTIONS: (true/false)
 Config.useFlashingScreen = true -- OPTIONS: (true/false)
