@@ -1,6 +1,6 @@
 ESX = nil
 
-TriggerEvent('mrpx:getSharedObject', function(obj)
+TriggerEvent('esx:getSharedObject', function(obj)
 	ESX = obj
 end)
 
@@ -40,11 +40,11 @@ end)
 -- FLASHING EFFECT (END)
 
 function notification(text)
-	TriggerClientEvent('mrpx:showNotification', source, text)
+	TriggerClientEvent('esx:showNotification', source, text)
 end
 
 --[[ Version Checker ]]--
-local version = "1.1.0"
+local version = "1.1.1"
 
 if Config.CheckForUpdates then
     AddEventHandler("onResourceStart", function(resource)

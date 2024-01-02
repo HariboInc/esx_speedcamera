@@ -5,18 +5,18 @@ local PlayerData = {}
 
 Citizen.CreateThread(function()
 	while ESX == nil do
-		TriggerEvent('mrpx:getSharedObject', function(obj) ESX = obj end)
+		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 		Citizen.Wait(0)
 	end
 end)
 
-RegisterNetEvent('mrpx:playerLoaded')
-AddEventHandler('mrpx:playerLoaded', function(xPlayer)
+RegisterNetEvent('esx:playerLoaded')
+AddEventHandler('esx:playerLoaded', function(xPlayer)
     PlayerData = xPlayer
 end)
 
-RegisterNetEvent('mrpx:setJob')
-AddEventHandler('mrpx:setJob', function(job)
+RegisterNetEvent('esx:setJob')
+AddEventHandler('esx:setJob', function(job)
     PlayerData.job = job
 end)
 
@@ -122,7 +122,7 @@ Citizen.CreateThread(function()
 											finalBillingPrice = Config.defaultPrice60
 										end
 										
-										TriggerServerEvent('mrpx_billing:sendBill', GetPlayerServerId(PlayerId()), 'society_police', ('ticket60') .. math.floor(SpeedKM) .. ('km'), finalBillingPrice) -- Sends a bill from the police
+										TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(PlayerId()), 'society_police', ('ticket60') .. math.floor(SpeedKM) .. ('km'), finalBillingPrice) -- Sends a bill from the police
 									else
 										TriggerServerEvent('esx_speedcamera:PayBill60Zone')
 									end
@@ -197,7 +197,7 @@ Citizen.CreateThread(function()
 											finalBillingPrice = Config.defaultPrice80
 										end
 									
-										TriggerServerEvent('mrpx_billing:sendBill', GetPlayerServerId(PlayerId()), 'society_police', ('ticket80') .. math.floor(SpeedKM) .. ('km'), finalBillingPrice) -- Sends a bill from the police
+										TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(PlayerId()), 'society_police', ('ticket80') .. math.floor(SpeedKM) .. ('km'), finalBillingPrice) -- Sends a bill from the police
 									else
 										TriggerServerEvent('esx_speedcamera:PayBill80Zone')
 									end
@@ -273,7 +273,7 @@ Citizen.CreateThread(function()
 											finalBillingPrice = Config.defaultPrice120
 										end
 									
-										TriggerServerEvent('mrpx_billing:sendBill', GetPlayerServerId(PlayerId()), 'society_police', ('ticket120') .. math.floor(SpeedKM) .. ('km'), finalBillingPrice) -- Sends a bill from the police
+										TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(PlayerId()), 'society_police', ('ticket120') .. math.floor(SpeedKM) .. ('km'), finalBillingPrice) -- Sends a bill from the police
 									else
 										TriggerServerEvent('esx_speedcamera:PayBill120Zone')
 									end
